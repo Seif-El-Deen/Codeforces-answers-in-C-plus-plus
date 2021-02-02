@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+	int n;
+	cin >> n;
+	int arr[5] = {};
+	for (int i = 0;i < n;i++) {
+		int value;
+		cin >> value;
+		arr[value]++;
+	}
+	int counter = 0;
+	counter += arr[4];
+	counter += arr[3];
+	arr[1] -= arr[3];
+	counter += arr[2] / 2 + arr[2] % 2;
+	if (arr[2] % 2 == 1) {
+		arr[1] -= 2;
+	}
+	arr[1] = arr[1] <= 0 ? 0 : arr[1];
+	counter += arr[1]/4;
+	arr[1] % 4 == 0 ? counter = counter : counter++;
+
+	cout << counter;
+
+	return 0;
+}
