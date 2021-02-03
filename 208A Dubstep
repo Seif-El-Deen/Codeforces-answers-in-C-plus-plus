@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+
+	string s;
+	cin >> s;
+	string output = "";
+	bool FirstWord=true;
+	bool wasSpace = false;
+	for (int i = 0;i < s.length();i++) {
+		if (s[i] == 'W' && s[i + 1] == 'U' && s[i + 2] == 'B') {
+			if (FirstWord == false&&wasSpace==false) {
+				output += ' ';
+				wasSpace = true;
+			}
+			i += 2;
+		}
+		else {
+			output += s[i];
+			FirstWord = false;
+			wasSpace = false;
+		}
+	}
+	cout << output;
+	return 0;
+}
