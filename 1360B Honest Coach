@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+
+	int t;
+	cin >> t;
+	for (int i = 0;i < t;i++) {
+		int n;
+		cin >> n;
+		vector<int> v;
+		v.resize(n);
+		int min = 1000;
+		for (int j = 0;j<n;j++) {
+			cin >> v[j];
+			for (int k = 0;k <j;k++) {
+				if (abs(v[j] - v[k]) < min)min = abs(v[j] - v[k]);
+			}
+		}
+		cout << min<<endl;
+	}
+	return 0;
+}
